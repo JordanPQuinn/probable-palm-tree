@@ -1,4 +1,3 @@
-
 const initialState = {
   processing: false
 }
@@ -23,6 +22,21 @@ export default (state = initialState, action) => {
       return {
         processing: false,
         error: action.payload.error,
+      }
+    case 'ADD_TO_PLAYLIST':
+      if (state && state.data) {
+        let found =  state.data.find(episode => {
+          return episode.title === action.payload.title
+        });
+        found.playlist = !found.playlist;
+        let index = state.data.map(({title}) => title).indexOf(found.title);
+        state.data.splice(index, 1, found);
+      }
+      
+      return {
+        processing: false,
+        data: [...state.data],
+        error: null
       }
     default:
       return state

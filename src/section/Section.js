@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addToPlayList } from '../actions/series-actions'
 import './Section.css';
 import Minus from '../images/minus.svg';
 import Play from '../images/play.svg';
 import Plus from '../images/plus.svg';
-
 
 class Section extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class Section extends Component {
 
   render() {
     const { props, state } = this;
-    const { episodes } = props;
+    const { addToPlayList, episodes } = props;
     const { activeIndex } = state;
 
     let tileArtSize = window.innerWidth < 1070 ? 'tileArtLarge' : 'tileArtMedium';
@@ -63,10 +63,12 @@ class Section extends Component {
                 <img 
                   className="play icon"
                   src={Play}
+                  onClick={() => console.log('noop')}
                 />
                 <img 
-                  className="plus icon"
-                  src={Plus}
+                  className="playlist icon"
+                  src={episodes[activeIndex].playlist ? Minus : Plus}
+                  onClick={addToPlayList.bind(null, episodes[activeIndex])}
                 />
                 <img 
                   className="active_episode_image"
@@ -85,4 +87,10 @@ class Section extends Component {
   }
 }
 
-export default Section;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToPlayList: (episode) => dispatch(addToPlayList(episode)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Section);

@@ -1,3 +1,13 @@
+export const addToPlayList = (episode) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'ADD_TO_PLAYLIST',
+      payload: 
+        episode
+    });
+  }
+}
+
 export const getSeriesRequest = () => {
   return (dispatch) => {
     dispatch({

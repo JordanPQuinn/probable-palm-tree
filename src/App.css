@@ -1,6 +1,7 @@
 #root {
   height: 100vh;
-  color: #FF9901;
+  color: #ff9901;
+  font-weight: 500;
 }
 
 .app {
