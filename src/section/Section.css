@@ -3,6 +3,7 @@
   flex-wrap: nowrap;
   flex-direction: row;
   max-width: 1070px;
+  min-width: 450px;
   align-items: flex-start;
 }
 
@@ -12,14 +13,37 @@
   min-width: 50%;
 }
 
+.active_episode_image_container {
+  position: relative;
+}
+
 .flex-right {
   display: inline-flex;
   flex-wrap: nowrap;
   flex-direction: row;
 }
 
-.episode_image {
+.active_episode_image {
   max-width: 100%;
+  min-width: 500px;
+}
+
+.active_episode_teaser {
+  max-width: calc(1070px - 50%);
+  text-align: left;
+  padding-top: 20px;
+  line-height: 140%;
+  color: #4a4a4a;
+}
+
+.active_episode_header {
+  position: absolute;
+  text-align: center;
+  padding: 12px;
+  margin: 10px 0 0 10px;
+  max-height: 25px;
+  background-color: black;
+  color: #ffffff;
 }
 
 .text_left,
@@ -29,15 +53,15 @@
 }
 
 .text_left {
-  width: 300px;
-  margin-left: 15px;
+  position: absolute;
+  left: 15px;
   text-align: left;
 }
 
 .text_right {
+  position: absolute;
   text-align: right;
-  min-width: 200px;
-  margin-right: 15px;
+  right: 15px;
 }
 
 .text_flex {
@@ -49,9 +73,11 @@
   border-radius: 5px;
   height: 48.25px;
   align-items: center;
+  min-width: 450px;
+  position: relative;
 }
 
-.text_flex.active {
+#active {
   background-color: #d1d9e2;
 }
 
@@ -59,10 +85,54 @@
   border: 1px solid #4a4a4a;
 }
 
-.episode_teaser {
-  max-width: calc(1070px - 50%);
-  text-align: left;
-  padding-top: 20px;
-  line-height: 140%;
-  color: #4a4a4a;
+.icon {
+  height: 40px;
+  position: absolute;
+  cursor: pointer;
 }
+
+.plus {
+  bottom: 40px;
+  right: 40px;
+}
+
+.play {
+  bottom: 100px;
+  right: 40px;
+}
+
+@media only screen and (max-width: 1069px) {
+  .flex {
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 100%;
+    min-width: 450px;
+    align-items: center;
+  }
+
+  .flex_left,
+  .flex_right {
+    max-width: 85%;
+    min-width: 85%;
+  }
+
+  .active_episode_image {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .active_episode_teaser {
+    max-width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    line-height: 140%;
+    min-height: 80px;
+    color: #4a4a4a;
+  }
+
+  .text_flex {
+    margin-left: 0;
+    min-width: 200px;
+  }
+}
+
