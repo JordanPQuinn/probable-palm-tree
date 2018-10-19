@@ -1,7 +1,6 @@
 #root {
   height: 100vh;
-  background-color: #282c34;
-  color: white;
+  color: #FF9901;
 }
 
 .app {
@@ -9,6 +8,10 @@
   margin: 0 auto;
   max-width: 1070px;
   padding-top: 50px;
+}
+
+p {
+  margin: 0;
 }
 
 .app h1 {

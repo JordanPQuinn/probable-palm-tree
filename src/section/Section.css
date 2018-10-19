@@ -1,0 +1,68 @@
+.flex {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  max-width: 1070px;
+  align-items: flex-start;
+}
+
+.flex_left,
+.flex_right {
+  max-width: 50%;
+  min-width: 50%;
+}
+
+.flex-right {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.episode_image {
+  max-width: 100%;
+}
+
+.text_left,
+.text_right {
+  height: 30px;
+  margin-top: 5px;
+}
+
+.text_left {
+  width: 300px;
+  margin-left: 15px;
+  text-align: left;
+}
+
+.text_right {
+  text-align: right;
+  min-width: 200px;
+  margin-right: 15px;
+}
+
+.text_flex {
+  display: flex;
+  background-color: #f4f5f6;
+  color: #4a4a4a;
+  margin: 0 0 15px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 48.25px;
+  align-items: center;
+}
+
+.text_flex.active {
+  background-color: #d1d9e2;
+}
+
+.text_flex:hover {
+  border: 1px solid #4a4a4a;
+}
+
+.episode_teaser {
+  max-width: calc(1070px - 50%);
+  text-align: left;
+  padding-top: 20px;
+  line-height: 140%;
+  color: #4a4a4a;
+}
